@@ -92,7 +92,7 @@ void EventThread::sendVsyncHintOnLocked() {
 }
 
 void EventThread::onFirstRef() {
-    run("EventThread", PRIORITY_REALTIME);
+    run("EventThread", PRIORITY_URGENT_DISPLAY + PRIORITY_MORE_FAVORABLE);
     android_set_rt_ioprio(getTid(), 1);
 }
 
